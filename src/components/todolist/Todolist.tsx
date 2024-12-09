@@ -12,7 +12,7 @@ type TodolistType = {
 }
 
 export function Todolist({title, task}: TodolistType) {
-    const tasksList = task.length === 0
+    /*const tasksList = task.length === 0
         ? <span>error, to-do list not found</span>
         : <ul>
             {
@@ -25,7 +25,24 @@ export function Todolist({title, task}: TodolistType) {
                     )
                 })
             }
+        </ul>*/
+    const tasksList = task.length === 0 ? (
+        <span className="error-message">Ошибка: список задач не найден</span>
+    ) : (
+        <ul className="task-list">
+            {task.map(t => (
+                <li key={t.id} className="task-item">
+                    <input type="checkbox" checked={t.isDone} onChange={() => handleToggle(t.id)} />
+                    <span className={t.isDone ? 'task-done' : ''}>{t.title}</span>
+                </li>
+            ))}
         </ul>
+    );
+
+// Функция для переключения состояния задачи (добавьте эту функцию в ваш компонент)
+    const handleToggle = (id: any) => {
+        // Логика для переключения состояния задачи
+    };
     return (
         <div className={'todolist'}>
             <TodolistHeader title={title}/>

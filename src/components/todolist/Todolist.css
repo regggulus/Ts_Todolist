@@ -16,3 +16,33 @@
 .header {
     text-align: center;
 }
+
+.error-message {
+    color: red; /* Цвет текста ошибки */
+    font-weight: bold; /* Жирный текст */
+    text-align: center; /* Центрирование текста */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.task-list {
+    list-style-type: none; /* Убирает маркеры списка */
+    padding: 0; /* Убирает внутренние отступы */
+    margin: 0; /* Убирает внешние отступы */
+}
+
+.task-item {
+    display: flex; /* Использует Flexbox для выравнивания */
+    align-items: center; /* Выравнивание по центру */
+    padding: 10px; /* Внутренние отступы */
+    border-bottom: 1px solid #ccc; /* Нижняя граница для разделения задач */
+    transition: background 0.3s; /* Плавный переход для фона */
+}
+
+.task-item:hover {
+    background-color: #f0f0f0; /* Подсветка задачи при наведении */
+}
+
+.task-done {
+    text-decoration: line-through; /* Зачеркивание завершённой задачи */
+    color: gray; /* Цвет текста для завершённых задач */
+}
