@@ -1,0 +1,12 @@
+.buttons {
+    margin: 0 5px;
+    padding: 7px 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+.buttons:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Тень при фокусе */
+    outline: none;                         /* Убирает стандартный фокус */
+}

@@ -1,9 +1,9 @@
 import React from "react";
-import {Buttons} from "./Buttons";
-import {TaskType} from "../App";
+import {Buttons} from "../buttons/Buttons";
+import {TaskType} from "../../App";
 import './Todolist.css';
-import {TodolistHeader} from "./TodolistHeader";
-import {AddItemForm} from "./AddItemForm";
+import {TodolistHeader} from "../TodolistHeader";
+import {AddItemForm} from "../addItemForm/AddItemForm";
 
 
 type TodolistType = {

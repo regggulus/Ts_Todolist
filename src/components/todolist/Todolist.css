@@ -1,0 +1,18 @@
+.todolist {
+    background-color: whitesmoke;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    border: 2px solid transparent; /* Начальный цвет границы */
+    transition: all 0.3s ease;
+}
+.todolist:hover {
+    border: 2px solid rgba(0, 0, 255, 0.5); /* Изменение цвета границы при наведении */
+    transform: scale(1.05); /* Увеличение размера */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Увеличение тени */
+    outline: none;
+}
+.header {
+    text-align: center;
+}

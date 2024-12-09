@@ -1,5 +1,6 @@
-import {Buttons} from "./Buttons";
 import React from "react";
+import {Buttons} from "../buttons/Buttons";
+import './AddItemForm.css'
 
 export const AddItemForm = () => {
     return (
