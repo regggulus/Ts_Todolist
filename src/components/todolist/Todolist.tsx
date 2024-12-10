@@ -9,9 +9,10 @@ import {AddItemForm} from "../addItemForm/AddItemForm";
 type TodolistType = {
     title: string
     task: Array<TaskType>
+    removeTasks: (taskId: number) =>void
 }
 
-export function Todolist({title, task}: TodolistType) {
+export function Todolist({title, task, removeTasks}: TodolistType) {
     /*const tasksList = task.length === 0
         ? <span>error, to-do list not found</span>
         : <ul>
@@ -26,6 +27,7 @@ export function Todolist({title, task}: TodolistType) {
                 })
             }
         </ul>*/
+
     const tasksList = task.length === 0 ? (
         <span className="error-message">Ошибка: список задач не найден</span>
     ) : (
@@ -34,6 +36,7 @@ export function Todolist({title, task}: TodolistType) {
                 <li key={t.id} className="task-item">
                     <input type="checkbox" checked={t.isDone} onChange={() => handleToggle(t.id)} />
                     <span className={t.isDone ? 'task-done' : ''}>{t.title}</span>
+                    <Buttons onClickHandler={() => {removeTasks(t.id)}} title={ '✘'}/>
                 </li>
             ))}
         </ul>

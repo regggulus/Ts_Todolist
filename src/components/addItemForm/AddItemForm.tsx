@@ -6,7 +6,7 @@ export const AddItemForm = () => {
     return (
         <div>
             <input className={'input'}/>
-            <Buttons title={'➕'}/>
+            <Buttons title={ '✚'}/>
         </div>
     )
 }

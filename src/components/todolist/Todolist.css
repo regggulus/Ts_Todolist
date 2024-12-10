@@ -33,13 +33,14 @@
 .task-item {
     display: flex; /* Использует Flexbox для выравнивания */
     align-items: center; /* Выравнивание по центру */
-    padding: 10px; /* Внутренние отступы */
-    border-bottom: 1px solid #ccc; /* Нижняя граница для разделения задач */
+    /*padding: 10px; !* Внутренние отступы *!*/
+    /*border-bottom: 1px solid #ccc; !* Нижняя граница для разделения задач *!*/
     transition: background 0.3s; /* Плавный переход для фона */
 }
 
 .task-item:hover {
-    background-color: #f0f0f0; /* Подсветка задачи при наведении */
+    background-color: #e8e8e8; /* Подсветка задачи при наведении */
+    border-radius: 8px;
 }
 
 .task-done {
