@@ -21,17 +21,17 @@ function App() {
         const task = tasks.filter(t => t.id !== taskId)
         setTask(...[task])
     }
-    let filteredTask: Array<TaskType> = tasks
+    let tasksForTodolist: Array<TaskType> = tasks
     if (filter =='active') {
-        filteredTask = tasks.filter((f) => !f.isDone)
+        tasksForTodolist = tasks.filter((f) => !f.isDone)
     }
     if (filter == 'completed') {
-        filteredTask = tasks.filter((f) => f.isDone)
+        tasksForTodolist = tasks.filter((f) => f.isDone)
     }
     return (
         <div className="App">
             <Todolist title={'What to learn'}
-                      task={filteredTask}
+                      task={tasksForTodolist}
                       removeTasks={removeTask}
             />
         </div>
