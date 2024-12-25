@@ -9,7 +9,7 @@ import {AddItemForm} from "../addItemForm/AddItemForm";
 type TodolistType = {
     title: string
     task: Array<TaskType>
-    removeTasks: (taskId: number) =>void
+    removeTasks: (taskId: string) =>void
     changeFilter: (filter: FilterValueType)=> void
 }
 
