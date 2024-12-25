@@ -12,7 +12,7 @@ export type TaskType = {
 
 function App() {
     const [filter, setFilter] = useState<FilterValueType>('all')
-    const [tasks, setTask] =
+    const [tasks, setTasks] =
         useState<Array<TaskType>>([
             {id: v1(), title: 'React', isDone: true},
             {id: v1(), title: 'JavaScript', isDone: true},
@@ -22,15 +22,17 @@ function App() {
         setFilter(filter)
     }
     const addTask = (title: string) => {
-        const task = {
-            id: v1(), title: title, isDone: false}
+        const newTask: TaskType = {
+            id: v1(), title: title, isDone: false
+        }
+        setTasks([newTask, ...tasks])
     }
     const removeTask = (taskId: string) => {
         const task = tasks.filter(t => t.id !== taskId)
-        setTask(...[task])
+        setTasks(...[task])
     }
     let tasksForTodolist: Array<TaskType> = tasks
-    if (filter =='active') {
+    if (filter == 'active') {
         tasksForTodolist = tasks.filter((f) => !f.isDone)
     }
     if (filter == 'completed') {
@@ -39,6 +41,7 @@ function App() {
     return (
         <div className="App">
             <Todolist title={'What to learn'}
+                      addTask={addTask}
                       task={tasksForTodolist}
                       removeTasks={removeTask}
                       changeFilter={changeFilter}

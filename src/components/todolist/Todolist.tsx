@@ -8,26 +8,14 @@ import {AddItemForm} from "../addItemForm/AddItemForm";
 
 type TodolistType = {
     title: string
+    addTask:(title: string)=>void
     task: Array<TaskType>
     removeTasks: (taskId: string) =>void
     changeFilter: (filter: FilterValueType)=> void
 }
 
-export function Todolist({title, task, removeTasks, changeFilter}: TodolistType) {
-    /*const tasksList = task.length === 0
-        ? <span>error, to-do list not found</span>
-        : <ul>
-            {
-                task.map(t => {
-                    return (
-                        <li key={t.id}>
-                            <input type="checkbox" checked={t.isDone}/>
-                            <span>{t.title}</span>
-                        </li>
-                    )
-                })
-            }
-        </ul>*/
+export function Todolist({
+                             addTask, title, task, removeTasks, changeFilter}: TodolistType) {
 
     const tasksList = task.length === 0 ? (
         <span className="error-message">Ошибка: список задач не найден</span>
@@ -46,7 +34,7 @@ export function Todolist({title, task, removeTasks, changeFilter}: TodolistType)
     return (
         <div className={'todolist'}>
             <TodolistHeader title={title}/>
-            <AddItemForm/>
+            <AddItemForm addTask={addTask}/>
             <div>
                 {tasksList}
             </div>
