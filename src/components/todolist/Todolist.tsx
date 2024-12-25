@@ -8,14 +8,15 @@ import {AddItemForm} from "../addItemForm/AddItemForm";
 
 type TodolistType = {
     title: string
-    addTask:(title: string)=>void
+    addTask: (title: string) => void
     task: Array<TaskType>
-    removeTasks: (taskId: string) =>void
-    changeFilter: (filter: FilterValueType)=> void
+    removeTasks: (taskId: string) => void
+    changeFilter: (filter: FilterValueType) => void
 }
 
 export function Todolist({
-                             addTask, title, task, removeTasks, changeFilter}: TodolistType) {
+                             addTask, title, task, removeTasks, changeFilter
+                         }: TodolistType) {
 
     const tasksList = task.length === 0 ? (
         <span className="error-message">Ошибка: список задач не найден</span>
@@ -25,7 +26,9 @@ export function Todolist({
                 <li key={t.id} className="task-item">
                     <input type="checkbox" checked={t.isDone}/>
                     <span className={t.isDone ? 'task-done' : ''}>{t.title}</span>
-                    <Buttons onClickHandler={() => {removeTasks(t.id)}} title={ '✘'}/>
+                    <Buttons onClickHandler={() => {
+                        removeTasks(t.id)
+                    }} title={'✘'}/>
                 </li>
             ))}
         </ul>
@@ -39,9 +42,15 @@ export function Todolist({
                 {tasksList}
             </div>
             <div>
-                <Buttons onClickHandler={() => {changeFilter('all')}}  title={'All'}/>
-                <Buttons onClickHandler={ () => {changeFilter('active')}} title={'Active'}/>
-                <Buttons onClickHandler={ () => {changeFilter('completed')}} title={'Completed'}/>
+                <Buttons onClickHandler={() => {
+                    changeFilter('all')
+                }} title={'All'}/>
+                <Buttons onClickHandler={() => {
+                    changeFilter('active')
+                }} title={'Active'}/>
+                <Buttons onClickHandler={() => {
+                    changeFilter('completed')
+                }} title={'Completed'}/>
 
             </div>
         </div>
